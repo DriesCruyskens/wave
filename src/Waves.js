@@ -12,13 +12,13 @@ export default class Waves {
         } */
 
         this.params = {
-            n_lines: 180,
+            n_lines: 260,
             n_vertices: 200,
             smoothing: 50,
             peak_height: 1,
             peak_width:8,
             paper_format: true,
-            moire: true,
+            moire: false,
             straight_edges: true,
             moire_x: 3,
             moire_y: 3,
@@ -130,6 +130,9 @@ export default class Waves {
                     path.add(new paper.Point(x, y))
                 }
             }
+            
+            path.smooth()
+            i % 2 ? path.reverse() : null // reverse every other path for quicker plotting en even ink stains
             paths.push(path)
             path = new paper.Path()
         }
@@ -181,8 +184,11 @@ export default class Waves {
         x = x * width + x_margin;
         y = y * height + y_margin;
 
+        
         const yoffset = this.circle_shape(x, y, width, height) * this.noise3D(x/this.params.smoothing, y/this.params.smoothing, this.params.seed)
         const xoffset = 10 * this.noise3D(x/this.params.smoothing, y/this.params.smoothing, this.params.seed)
+        
+        
 
         x = x - xoffset
         y = y - yoffset * this.params.peak_height
