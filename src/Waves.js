@@ -22,7 +22,8 @@ export default class Waves {
             straight_edges: true,
             moire_x: 3,
             moire_y: 3,
-            seed: Math.random() * 2000
+            seed: Math.random() * 2000,
+            optimize4plot: false,
             //shape: this.shaping_functions.circle,
         }
 
@@ -132,7 +133,7 @@ export default class Waves {
             }
             
             path.smooth()
-            i % 2 ? path.reverse() : null // reverse every other path for quicker plotting en even ink stains
+            this.params.optimize4plot && i % 2 ? path.reverse() : null // reverse every other path for quicker plotting en even ink stains
             paths.push(path)
             path = new paper.Path()
         }
@@ -206,6 +207,11 @@ export default class Waves {
 
         this.gui.add(this.params, 'paper_format').onFinishChange((value) => {
             this.params.paper_format = value;
+            this.reset();
+        });
+
+        this.gui.add(this.params, 'optimize4plot').onFinishChange((value) => {
+            this.params.optimize4plot = value;
             this.reset();
         });
 
