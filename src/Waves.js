@@ -220,12 +220,12 @@ export default class Waves {
             this.reset();
         });
 
-        this.gui.add(this.params, 'moire_x', -5, 5).onFinishChange((value) => {
+        this.gui.add(this.params, 'moire_x', -5, 5).step(0.001).onFinishChange((value) => {
             this.params.moire_x = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'moire_y', -5, 5).onFinishChange((value) => {
+        this.gui.add(this.params, 'moire_y', -5, 5).step(0.001).onFinishChange((value) => {
             this.params.moire_y = value;
             this.reset();
         });
@@ -245,22 +245,22 @@ export default class Waves {
             this.reset();
         });
 
-        this.gui.add(this.params, 'smoothing', 0, 200).onFinishChange((value) => {
+        this.gui.add(this.params, 'smoothing', 0, 200).step(0.001).onFinishChange((value) => {
             this.params.smoothing = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'peak_height', 0, 1.5).onFinishChange((value) => {
+        this.gui.add(this.params, 'peak_height', 0, 1.5).step(0.001).onFinishChange((value) => {
             this.params.peak_height = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'peak_width', 0, 10).onFinishChange((value) => {
+        this.gui.add(this.params, 'peak_width', 0, 10).step(0.001).onFinishChange((value) => {
             this.params.peak_width = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'seed', 0, 2000).onFinishChange((value) => {
+        this.gui.add(this.params, 'seed', 0, 2000).step(0.001).onFinishChange((value) => {
             this.params.seed = value;
             this.reset();
         });
