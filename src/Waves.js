@@ -12,6 +12,8 @@ export default class Waves {
         } */
 
         this.params = {
+            width: .5,
+            height: .5,
             n_lines: 260,
             n_vertices: 200,
             smoothing: 50,
@@ -94,8 +96,8 @@ export default class Waves {
         let paths = []
         let path = new paper.Path()
 
-        const height = paper.view.bounds.height / 1.3;
-        let width = paper.view.bounds.width / 1.3;
+        const height = paper.view.bounds.height * this.params.height;
+        let width = paper.view.bounds.width * this.params.height;
 
         if (this.params.paper_format) {
             width = height / 1.4142
@@ -212,6 +214,16 @@ export default class Waves {
 
         this.gui.add(this.params, 'optimize4plot').onFinishChange((value) => {
             this.params.optimize4plot = value;
+            this.reset();
+        });
+
+        this.gui.add(this.params, 'width', 0, 1).step(0.001).onChange((value) => {
+            this.params.width = value;
+            this.reset();
+        });
+
+        this.gui.add(this.params, 'height', 0, 1).step(0.001).onChange((value) => {
+            this.params.height = value;
             this.reset();
         });
 
