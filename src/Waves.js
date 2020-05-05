@@ -240,7 +240,7 @@ export default class Waves {
             this.reset();
         });
 
-        this.gui.add(this.params, 'n_vertices', 4, 500).step(1).onFinishChange((value) => {
+        this.gui.add(this.params, 'n_vertices', 2, 500).step(1).onFinishChange((value) => {
             this.params.n_vertices = value;
             this.reset();
         });
