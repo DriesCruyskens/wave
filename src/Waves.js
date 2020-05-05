@@ -240,7 +240,7 @@ export default class Waves {
             this.reset();
         });
 
-        this.gui.add(this.params, 'n_vertices', 2, 500).step(1).onFinishChange((value) => {
+        this.gui.add(this.params, 'n_vertices', 1, 500).step(1).onFinishChange((value) => {
             this.params.n_vertices = value;
             this.reset();
         });
@@ -250,12 +250,12 @@ export default class Waves {
             this.reset();
         });
 
-        this.gui.add(this.params, 'peak_height', 0, 1.5).step(0.001).onFinishChange((value) => {
+        this.gui.add(this.params, 'peak_height', 0, 3).step(0.001).onFinishChange((value) => {
             this.params.peak_height = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'peak_width', 0, 10).step(0.001).onFinishChange((value) => {
+        this.gui.add(this.params, 'peak_width', 0, 10000).step(0.001).onFinishChange((value) => {
             this.params.peak_width = value;
             this.reset();
         });
