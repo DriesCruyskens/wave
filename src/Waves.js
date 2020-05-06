@@ -13,12 +13,12 @@ export default class Waves {
 
         this.params = {
             width: .5,
-            height: .5,
-            n_lines: 260,
-            n_vertices: 200,
-            smoothing: 50,
-            peak_height: 1,
-            peak_width:8,
+            height: .8,
+            n_lines: 350,
+            n_vertices: 6,
+            smoothing: 15,
+            peak_height: .9,
+            peak_width: 100,
             paper_format: true,
             moire: false,
             straight_edges: true,
@@ -247,7 +247,7 @@ export default class Waves {
             this.reset();
         });
 
-        this.gui.add(this.params, 'n_lines', 10, 500).step(1).onFinishChange((value) => {
+        this.gui.add(this.params, 'n_lines', 10, 700).step(1).onFinishChange((value) => {
             this.params.n_lines = value;
             this.reset();
         });
