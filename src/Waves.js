@@ -207,72 +207,72 @@ export default class Waves {
     init_gui() {
         this.gui.add(this, 'randomize').name('Randomize');
 
-        this.gui.add(this.params, 'paper_format').onFinishChange((value) => {
+        this.gui.add(this.params, 'paper_format').listen().onFinishChange((value) => {
             this.params.paper_format = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'optimize4plot').onFinishChange((value) => {
+        this.gui.add(this.params, 'optimize4plot').listen().onFinishChange((value) => {
             this.params.optimize4plot = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'width', 0, 1).step(0.001).onChange((value) => {
+        this.gui.add(this.params, 'width', 0, 1).step(0.001).listen().onChange((value) => {
             this.params.width = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'height', 0, 1).step(0.001).onChange((value) => {
+        this.gui.add(this.params, 'height', 0, 1).step(0.001).listen().onChange((value) => {
             this.params.height = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'moire').onFinishChange((value) => {
+        this.gui.add(this.params, 'moire').listen().onFinishChange((value) => {
             this.params.moire = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'moire_x', -5, 5).step(0.001).onFinishChange((value) => {
+        this.gui.add(this.params, 'moire_x', -5, 5).step(0.001).listen().onFinishChange((value) => {
             this.params.moire_x = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'moire_y', -5, 5).step(0.001).onFinishChange((value) => {
+        this.gui.add(this.params, 'moire_y', -5, 5).step(0.001).listen().onFinishChange((value) => {
             this.params.moire_y = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'straight_edges').onFinishChange((value) => {
+        this.gui.add(this.params, 'straight_edges').listen().onFinishChange((value) => {
             this.params.straight_edges = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'n_lines', 10, 700).step(1).onFinishChange((value) => {
+        this.gui.add(this.params, 'n_lines', 10, 700).step(1).listen().onFinishChange((value) => {
             this.params.n_lines = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'n_vertices', 1, 500).step(1).onFinishChange((value) => {
+        this.gui.add(this.params, 'n_vertices', 1, 500).step(1).listen().onFinishChange((value) => {
             this.params.n_vertices = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'smoothing', 0, 200).step(0.001).onFinishChange((value) => {
+        this.gui.add(this.params, 'smoothing', 0, 200).step(0.001).listen().onFinishChange((value) => {
             this.params.smoothing = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'peak_height', 0, 3).step(0.001).onFinishChange((value) => {
+        this.gui.add(this.params, 'peak_height', 0, 3).step(0.001).listen().onFinishChange((value) => {
             this.params.peak_height = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'peak_width', 0, 10000).step(0.001).onFinishChange((value) => {
+        this.gui.add(this.params, 'peak_width', 0, 10000).step(0.001).listen().onFinishChange((value) => {
             this.params.peak_width = value;
             this.reset();
         });
 
-        this.gui.add(this.params, 'seed', 0, 2000).step(0.001).onFinishChange((value) => {
+        this.gui.add(this.params, 'seed', 0, 2000).step(0.001).listen().onFinishChange((value) => {
             this.params.seed = value;
             this.reset();
         });
